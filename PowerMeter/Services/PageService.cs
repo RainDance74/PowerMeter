@@ -15,10 +15,22 @@ public class PageService : IPageService
     public PageService()
     {
         Configure<MainMenuViewModel, MainMenuPage>();
+
+
         Configure<ViewModels.Menu.Users.UsersViewModel, Views.Menu.Users.UsersPage>();
+
+        Configure<ViewModels.Menu.Users.Cards.ContentGridViewModel, Views.Menu.Users.Cards.ContentGridPage>();
+        Configure<ViewModels.Menu.Users.Cards.ContentGridDetailViewModel, Views.Menu.Users.Cards.ContentGridDetailPage>();
+
         Configure<ChartViewModel, ChartPage>();
+
+
         Configure<PaymentsViewModel, PaymentsPage>();
+
+
         Configure<RecommendationsViewModel, RecommendationsPage>();
+
+
         Configure<SettingsViewModel, SettingsPage>();
     }
 

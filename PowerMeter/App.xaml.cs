@@ -72,24 +72,37 @@ public partial class App : Application
 
             // Views and ViewModels
             // TODO: Add lines with controls like that after adding new Views:
-            //services.AddTransient<ContentGridDetailViewModel>();
-            //services.AddTransient<ContentGridDetailPage>();
-            //services.AddTransient<ContentGridViewModel>();
-            //services.AddTransient<ContentGridPage>();
-            services.AddTransient<SettingsViewModel>();
-            services.AddTransient<SettingsPage>();
-            services.AddTransient<RecommendationsViewModel>();
-            services.AddTransient<RecommendationsPage>();
-            services.AddTransient<PaymentsViewModel>();
-            services.AddTransient<PaymentsPage>();
-            services.AddTransient<ChartViewModel>();
-            services.AddTransient<ChartPage>();
-            services.AddTransient<ViewModels.Menu.Users.UsersViewModel>();
-            services.AddTransient<Views.Menu.Users.UsersPage>();
-            services.AddTransient<MainMenuViewModel>();
-            services.AddTransient<MainMenuPage>();
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();
+
+
+            services.AddTransient<MainMenuViewModel>();
+            services.AddTransient<MainMenuPage>();
+
+
+            services.AddTransient<ViewModels.Menu.Users.UsersViewModel>();
+            services.AddTransient<Views.Menu.Users.UsersPage>();
+
+            services.AddTransient<ViewModels.Menu.Users.Cards.ContentGridDetailViewModel>();
+            services.AddTransient<Views.Menu.Users.Cards.ContentGridDetailPage>();
+            services.AddTransient<ViewModels.Menu.Users.Cards.ContentGridViewModel>();
+            services.AddTransient<Views.Menu.Users.Cards.ContentGridPage>();
+
+
+            services.AddTransient<RecommendationsViewModel>();
+            services.AddTransient<RecommendationsPage>();
+
+
+            services.AddTransient<PaymentsViewModel>();
+            services.AddTransient<PaymentsPage>();
+
+
+            services.AddTransient<ChartViewModel>();
+            services.AddTransient<ChartPage>();
+
+
+            services.AddTransient<SettingsViewModel>();
+            services.AddTransient<SettingsPage>();
 
             // Configuration
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));
