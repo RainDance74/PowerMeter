@@ -66,9 +66,16 @@ public partial class App : Application
             services.AddSingleton<INavigationService, NavigationService>();
 
             // Core Services
+            // TODO: Change this👇 line after implement the real data
+            services.AddSingleton<ISampleDataService, SampleDataService>();
             services.AddSingleton<IFileService, FileService>();
 
             // Views and ViewModels
+            // TODO: Add lines with controls like that after adding new Views:
+            //services.AddTransient<ContentGridDetailViewModel>();
+            //services.AddTransient<ContentGridDetailPage>();
+            //services.AddTransient<ContentGridViewModel>();
+            //services.AddTransient<ContentGridPage>();
             services.AddTransient<SettingsViewModel>();
             services.AddTransient<SettingsPage>();
             services.AddTransient<RecommendationsViewModel>();
