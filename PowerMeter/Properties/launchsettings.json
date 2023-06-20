@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "PowerMeter (Unpackaged)": {
+        "commandName": "Project"
+      },
+      "PowerMeter (Package)": {
+        "commandName": "MsixPackage"
+      }
+    }
+}
