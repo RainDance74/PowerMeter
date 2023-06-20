@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace PowerMeter.ViewModels;
+namespace PowerMeter.ViewModels.Menu.Users;
 
 public partial class UsersViewModel : ObservableRecipient
 {

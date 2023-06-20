@@ -15,7 +15,7 @@ public class PageService : IPageService
     public PageService()
     {
         Configure<MainMenuViewModel, MainMenuPage>();
-        Configure<UsersViewModel, UsersPage>();
+        Configure<ViewModels.Menu.Users.UsersViewModel, Views.Menu.Users.UsersPage>();
         Configure<ChartViewModel, ChartPage>();
         Configure<PaymentsViewModel, PaymentsPage>();
         Configure<RecommendationsViewModel, RecommendationsPage>();

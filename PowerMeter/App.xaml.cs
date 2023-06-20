@@ -84,8 +84,8 @@ public partial class App : Application
             services.AddTransient<PaymentsPage>();
             services.AddTransient<ChartViewModel>();
             services.AddTransient<ChartPage>();
-            services.AddTransient<UsersViewModel>();
-            services.AddTransient<UsersPage>();
+            services.AddTransient<ViewModels.Menu.Users.UsersViewModel>();
+            services.AddTransient<Views.Menu.Users.UsersPage>();
             services.AddTransient<MainMenuViewModel>();
             services.AddTransient<MainMenuPage>();
             services.AddTransient<ShellPage>();

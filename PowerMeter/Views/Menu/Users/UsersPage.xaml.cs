@@ -2,18 +2,18 @@
 
 using PowerMeter.ViewModels;
 
-namespace PowerMeter.Views;
+namespace PowerMeter.Views.Menu.Users;
 
 public sealed partial class UsersPage : Page
 {
-    public UsersViewModel ViewModel
+    public ViewModels.Menu.Users.UsersViewModel ViewModel
     {
         get;
     }
 
     public UsersPage()
     {
-        ViewModel = App.GetService<UsersViewModel>();
+        ViewModel = App.GetService<ViewModels.Menu.Users.UsersViewModel>();
         InitializeComponent();
     }
 }

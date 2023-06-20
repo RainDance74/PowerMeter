@@ -48,7 +48,7 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem x:Uid="Shell_Users" helpers:NavigationHelper.NavigateTo="PowerMeter.ViewModels.UsersViewModel">
+                <NavigationViewItem x:Uid="Shell_Users" helpers:NavigationHelper.NavigateTo="PowerMeter.ViewModels.Menu.Users.UsersViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
