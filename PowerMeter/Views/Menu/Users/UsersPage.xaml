@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:CardsPage="using:PowerMeter.Views.Menu.Users.Cards"
+    xmlns:ManagingPage="using:PowerMeter.Views.Menu.Users.Managing"
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
@@ -18,7 +19,7 @@
             
             <PivotItem Header="Managing">
                 <Grid>
-                    
+                    <ManagingPage:DataGridPage/>
                 </Grid>
             </PivotItem>
             

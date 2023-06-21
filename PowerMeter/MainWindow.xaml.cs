@@ -1,6 +1,6 @@
 ﻿using PowerMeter.Helpers;
 
-using Windows.UI.ViewManagement;
+using Windows.UI.ViewManagement; 
 
 namespace PowerMeter;
 
