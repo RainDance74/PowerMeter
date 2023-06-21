@@ -25,8 +25,10 @@ public class PageService : IPageService
         Configure<ViewModels.Menu.Users.Managing.DataGridViewModel, Views.Menu.Users.Managing.DataGridPage>();
         // Chart page
         Configure<ChartViewModel, ChartPage>();
-        // Payment page
-        Configure<PaymentsViewModel, PaymentsPage>();
+        // Payments pages
+        Configure<ViewModels.Menu.Payments.PaymentsViewModel, Views.Menu.Payments.PaymentsPage>();
+
+        Configure<ViewModels.Menu.Payments.PaymentsListViewModel.PaymentsListViewModel, Views.Menu.Payments.PaymentHistory.PaymentsListPage>();
         // Recommendations page
         Configure<RecommendationsViewModel, RecommendationsPage>();
         // Settings page

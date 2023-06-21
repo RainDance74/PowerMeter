@@ -58,7 +58,7 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem x:Uid="Shell_Payments" helpers:NavigationHelper.NavigateTo="PowerMeter.ViewModels.PaymentsViewModel">
+                <NavigationViewItem x:Uid="Shell_Payments" helpers:NavigationHelper.NavigateTo="PowerMeter.ViewModels.Menu.Payments.PaymentsViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>

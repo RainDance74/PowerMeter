@@ -1,8 +1,8 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 
-using PowerMeter.ViewModels;
+using PowerMeter.ViewModels.Menu.Payments;
 
-namespace PowerMeter.Views;
+namespace PowerMeter.Views.Menu.Payments;
 
 public sealed partial class PaymentsPage : Page
 {

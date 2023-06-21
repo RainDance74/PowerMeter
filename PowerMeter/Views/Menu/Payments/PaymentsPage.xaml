@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="PowerMeter.Views.Menu.Payments.PaymentsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:PaymentHistory="using:PowerMeter.Views.Menu.Payments.PaymentHistory"
+    mc:Ignorable="d">
+
+    <Grid x:Name="ContentArea">
+        
+        <!--TODO: Add checking of user role, and remain Pivot only for Accountant-->
+        
+        <Pivot>
+
+            <PivotItem Header="Payment History">
+                <Grid>
+                    <!--TODO: Add Payment Tab Page here and below-->
+                    <PaymentHistory:PaymentsListPage/>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="Make a payment">
+                <Grid>
+                    <!--<MakePayment:DataGridPage/>-->
+                </Grid>
+            </PivotItem>
+
+        </Pivot>
+
+    </Grid>
+</Page>
