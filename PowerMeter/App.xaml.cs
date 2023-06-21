@@ -11,9 +11,11 @@ using PowerMeter.Models;
 using PowerMeter.Services;
 using PowerMeter.ViewModels;
 using PowerMeter.ViewModels.Menu.Payments.PaymentsListViewModel;
+using PowerMeter.ViewModels.Menu.Recommendations.Cards;
 using PowerMeter.ViewModels.Menu.Users.Managing;
 using PowerMeter.Views;
 using PowerMeter.Views.Menu.Payments.PaymentHistory;
+using PowerMeter.Views.Menu.Recommendations.Cards;
 using PowerMeter.Views.Menu.Users.Managing;
 
 namespace PowerMeter;
@@ -96,6 +98,12 @@ public partial class App : Application
             // Recommendations pages
             services.AddTransient<ViewModels.Menu.Recommendations.RecommendationsViewModel>();
             services.AddTransient<Views.Menu.Recommendations.RecommendationsPage>();
+
+            services.AddTransient<ViewModels.Menu.Recommendations.Cards.RecommendationsDetailViewModel>();
+            services.AddTransient<Views.Menu.Recommendations.Cards.RecommendationsDetailPage>();
+
+            services.AddTransient<ViewModels.Menu.Recommendations.Cards.RecommendationsViewModel>();
+            services.AddTransient<Views.Menu.Recommendations.Cards.RecommendationsPage>();
             // Payments pages
             services.AddTransient<ViewModels.Menu.Payments.PaymentsViewModel>();
             services.AddTransient<Views.Menu.Payments.PaymentsPage>();

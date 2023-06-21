@@ -19,6 +19,8 @@
   <ItemGroup>
     <None Remove="Views\Menu\Payments\PaymentHistory\PaymentsListDetailControl.xaml" />
     <None Remove="Views\Menu\Payments\PaymentHistory\PaymentsListPage.xaml" />
+    <None Remove="Views\Menu\Recommendations\Cards\RecommendationsDetailPage.xaml" />
+    <None Remove="Views\Menu\Recommendations\Cards\RecommendationsPage.xaml" />
     <None Remove="Views\Menu\Users\Cards\ContentGridDetailPage.xaml" />
     <None Remove="Views\Menu\Users\Cards\ContentGridPage.xaml" />
     <None Remove="Views\Menu\Users\Managing\DataGridPage.xaml" />
@@ -45,6 +47,12 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Update="Views\Menu\Recommendations\Cards\RecommendationsDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\Menu\Recommendations\Cards\RecommendationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Update="Views\Menu\Payments\PaymentHistory\PaymentsListDetailControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -68,9 +76,7 @@
 
   <ItemGroup>
     <Folder Include="ViewModels\Menu\Payments\MakePayment\" />
-    <Folder Include="ViewModels\Menu\Recommendations\Cards\" />
     <Folder Include="Views\Menu\Payments\MakePayment\" />
-    <Folder Include="Views\Menu\Recommendations\Cards\" />
   </ItemGroup>
   
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">

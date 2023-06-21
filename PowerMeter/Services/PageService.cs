@@ -29,8 +29,11 @@ public class PageService : IPageService
         Configure<ViewModels.Menu.Payments.PaymentsViewModel, Views.Menu.Payments.PaymentsPage>();
 
         Configure<ViewModels.Menu.Payments.PaymentsListViewModel.PaymentsListViewModel, Views.Menu.Payments.PaymentHistory.PaymentsListPage>();
-        // Recommendations page
+        // Recommendations pages
         Configure<ViewModels.Menu.Recommendations.RecommendationsViewModel, Views.Menu.Recommendations.RecommendationsPage>();
+
+        Configure<ViewModels.Menu.Recommendations.Cards.RecommendationsViewModel, Views.Menu.Recommendations.Cards.RecommendationsPage>();
+        Configure<ViewModels.Menu.Recommendations.Cards.RecommendationsDetailViewModel, Views.Menu.Recommendations.Cards.RecommendationsDetailPage>();
         // Settings page
         Configure<SettingsViewModel, SettingsPage>();
     }
