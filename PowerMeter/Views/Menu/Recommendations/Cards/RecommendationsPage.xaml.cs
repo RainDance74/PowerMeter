@@ -1,8 +1,8 @@
-﻿using Microsoft.UI.Xaml.Controls;
+using PowerMeter.ViewModels.Menu.Recommendations.Cards;
 
-using PowerMeter.ViewModels;
+using Microsoft.UI.Xaml.Controls;
 
-namespace PowerMeter.Views;
+namespace PowerMeter.Views.Menu.Recommendations.Cards;
 
 public sealed partial class RecommendationsPage : Page
 {
@@ -17,3 +17,4 @@ public sealed partial class RecommendationsPage : Page
         InitializeComponent();
     }
 }
+

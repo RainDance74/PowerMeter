@@ -63,7 +63,7 @@
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem x:Uid="Shell_Recommendations" helpers:NavigationHelper.NavigateTo="PowerMeter.ViewModels.RecommendationsViewModel">
+                <NavigationViewItem x:Uid="Shell_Recommendations" helpers:NavigationHelper.NavigateTo="PowerMeter.ViewModels.Menu.Recommendations.RecommendationsViewModel">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xe7c3;"/>
                     </NavigationViewItem.Icon>
