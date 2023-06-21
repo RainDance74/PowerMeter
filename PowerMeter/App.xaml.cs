@@ -10,8 +10,10 @@ using PowerMeter.Helpers;
 using PowerMeter.Models;
 using PowerMeter.Services;
 using PowerMeter.ViewModels;
+using PowerMeter.ViewModels.Menu.Payments.PaymentsListViewModel;
 using PowerMeter.ViewModels.Menu.Users.Managing;
 using PowerMeter.Views;
+using PowerMeter.Views.Menu.Payments.PaymentHistory;
 using PowerMeter.Views.Menu.Users.Managing;
 
 namespace PowerMeter;
@@ -97,6 +99,9 @@ public partial class App : Application
             // Payments pages
             services.AddTransient<ViewModels.Menu.Payments.PaymentsViewModel>();
             services.AddTransient<Views.Menu.Payments.PaymentsPage>();
+
+            services.AddTransient<ViewModels.Menu.Payments.PaymentsListViewModel.PaymentsListViewModel>();
+            services.AddTransient<Views.Menu.Payments.PaymentHistory.PaymentsListPage>();
             // Chart page
             services.AddTransient<ChartViewModel>();
             services.AddTransient<ChartPage>();
