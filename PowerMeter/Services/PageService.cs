@@ -30,7 +30,7 @@ public class PageService : IPageService
 
         Configure<ViewModels.Menu.Payments.PaymentsListViewModel.PaymentsListViewModel, Views.Menu.Payments.PaymentHistory.PaymentsListPage>();
         // Recommendations page
-        Configure<RecommendationsViewModel, RecommendationsPage>();
+        Configure<ViewModels.Menu.Recommendations.RecommendationsViewModel, Views.Menu.Recommendations.RecommendationsPage>();
         // Settings page
         Configure<SettingsViewModel, SettingsPage>();
     }

@@ -68,7 +68,9 @@
 
   <ItemGroup>
     <Folder Include="ViewModels\Menu\Payments\MakePayment\" />
+    <Folder Include="ViewModels\Menu\Recommendations\Cards\" />
     <Folder Include="Views\Menu\Payments\MakePayment\" />
+    <Folder Include="Views\Menu\Recommendations\Cards\" />
   </ItemGroup>
   
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">

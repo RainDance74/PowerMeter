@@ -93,9 +93,9 @@ public partial class App : Application
 
             services.AddTransient<DataGridViewModel>();
             services.AddTransient<DataGridPage>();
-            // Recommendations page
-            services.AddTransient<RecommendationsViewModel>();
-            services.AddTransient<RecommendationsPage>();
+            // Recommendations pages
+            services.AddTransient<ViewModels.Menu.Recommendations.RecommendationsViewModel>();
+            services.AddTransient<Views.Menu.Recommendations.RecommendationsPage>();
             // Payments pages
             services.AddTransient<ViewModels.Menu.Payments.PaymentsViewModel>();
             services.AddTransient<Views.Menu.Payments.PaymentsPage>();

@@ -1,8 +1,8 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 
-using PowerMeter.ViewModels;
+using PowerMeter.ViewModels.Menu.Recommendations;
 
-namespace PowerMeter.Views;
+namespace PowerMeter.Views.Menu.Recommendations;
 
 public sealed partial class RecommendationsPage : Page
 {
