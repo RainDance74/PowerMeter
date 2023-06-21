@@ -26,7 +26,7 @@ public class PageService : IPageService
         // Chart page
         Configure<ChartViewModel, ChartPage>();
         // Payment page
-        Configure<PaymentsViewModel, PaymentsPage>();
+        Configure<ViewModels.Menu.Payments.PaymentsViewModel, Views.Menu.Payments.PaymentsPage>();
         // Recommendations page
         Configure<RecommendationsViewModel, RecommendationsPage>();
         // Settings page

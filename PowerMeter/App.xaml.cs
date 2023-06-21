@@ -94,9 +94,9 @@ public partial class App : Application
             // Recommendations page
             services.AddTransient<RecommendationsViewModel>();
             services.AddTransient<RecommendationsPage>();
-            // Payments page
-            services.AddTransient<PaymentsViewModel>();
-            services.AddTransient<PaymentsPage>();
+            // Payments pages
+            services.AddTransient<ViewModels.Menu.Payments.PaymentsViewModel>();
+            services.AddTransient<Views.Menu.Payments.PaymentsPage>();
             // Chart page
             services.AddTransient<ChartViewModel>();
             services.AddTransient<ChartPage>();

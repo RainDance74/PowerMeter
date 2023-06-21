@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace PowerMeter.ViewModels;
+namespace PowerMeter.ViewModels.Menu.Payments;
 
 public partial class PaymentsViewModel : ObservableRecipient
 {
