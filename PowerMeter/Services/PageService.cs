@@ -14,11 +14,22 @@ public class PageService : IPageService
 
     public PageService()
     {
+        // MainMenu page
         Configure<MainMenuViewModel, MainMenuPage>();
-        Configure<UsersViewModel, UsersPage>();
+        // Users pages
+        Configure<ViewModels.Menu.Users.UsersViewModel, Views.Menu.Users.UsersPage>();
+
+        Configure<ViewModels.Menu.Users.Cards.ContentGridViewModel, Views.Menu.Users.Cards.ContentGridPage>();
+        Configure<ViewModels.Menu.Users.Cards.ContentGridDetailViewModel, Views.Menu.Users.Cards.ContentGridDetailPage>();
+
+        Configure<ViewModels.Menu.Users.Managing.DataGridViewModel, Views.Menu.Users.Managing.DataGridPage>();
+        // Chart page
         Configure<ChartViewModel, ChartPage>();
+        // Payment page
         Configure<PaymentsViewModel, PaymentsPage>();
+        // Recommendations page
         Configure<RecommendationsViewModel, RecommendationsPage>();
+        // Settings page
         Configure<SettingsViewModel, SettingsPage>();
     }
 

@@ -10,7 +10,9 @@ using PowerMeter.Helpers;
 using PowerMeter.Models;
 using PowerMeter.Services;
 using PowerMeter.ViewModels;
+using PowerMeter.ViewModels.Menu.Users.Managing;
 using PowerMeter.Views;
+using PowerMeter.Views.Menu.Users.Managing;
 
 namespace PowerMeter;
 
@@ -72,24 +74,35 @@ public partial class App : Application
 
             // Views and ViewModels
             // TODO: Add lines with controls like that after adding new Views:
-            //services.AddTransient<ContentGridDetailViewModel>();
-            //services.AddTransient<ContentGridDetailPage>();
-            //services.AddTransient<ContentGridViewModel>();
-            //services.AddTransient<ContentGridPage>();
-            services.AddTransient<SettingsViewModel>();
-            services.AddTransient<SettingsPage>();
-            services.AddTransient<RecommendationsViewModel>();
-            services.AddTransient<RecommendationsPage>();
-            services.AddTransient<PaymentsViewModel>();
-            services.AddTransient<PaymentsPage>();
-            services.AddTransient<ChartViewModel>();
-            services.AddTransient<ChartPage>();
-            services.AddTransient<UsersViewModel>();
-            services.AddTransient<UsersPage>();
-            services.AddTransient<MainMenuViewModel>();
-            services.AddTransient<MainMenuPage>();
+            // ShellPage
             services.AddTransient<ShellPage>();
             services.AddTransient<ShellViewModel>();
+            // MainMenuPage
+            services.AddTransient<MainMenuViewModel>();
+            services.AddTransient<MainMenuPage>();
+            // Users pages
+            services.AddTransient<ViewModels.Menu.Users.UsersViewModel>();
+            services.AddTransient<Views.Menu.Users.UsersPage>();
+
+            services.AddTransient<ViewModels.Menu.Users.Cards.ContentGridDetailViewModel>();
+            services.AddTransient<Views.Menu.Users.Cards.ContentGridDetailPage>();
+            services.AddTransient<ViewModels.Menu.Users.Cards.ContentGridViewModel>();
+            services.AddTransient<Views.Menu.Users.Cards.ContentGridPage>();
+
+            services.AddTransient<DataGridViewModel>();
+            services.AddTransient<DataGridPage>();
+            // Recommendations page
+            services.AddTransient<RecommendationsViewModel>();
+            services.AddTransient<RecommendationsPage>();
+            // Payments page
+            services.AddTransient<PaymentsViewModel>();
+            services.AddTransient<PaymentsPage>();
+            // Chart page
+            services.AddTransient<ChartViewModel>();
+            services.AddTransient<ChartPage>();
+            // Settings page
+            services.AddTransient<SettingsViewModel>();
+            services.AddTransient<SettingsPage>();
 
             // Configuration
             services.Configure<LocalSettingsOptions>(context.Configuration.GetSection(nameof(LocalSettingsOptions)));
