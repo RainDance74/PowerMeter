@@ -15,7 +15,7 @@ public partial class Department
 
     [Key]
     [Column("department_id")]
-    public int DepartmentId { get; set; }
+    public int Id { get; set; }
     [Column("department_name")]
     [StringLength(50)]
     public string DepartmentName { get; set; } = null!;
