@@ -10,19 +10,24 @@ public partial class Recommendation
     [Key]
     [Column("recommendation_id")]
     public int Id { get; set; }
+
     [Column("title")]
     [StringLength(100)]
     public string Title { get; set; } = null!;
-    [Column("description")]
 
+    [Column("description")]
     public string? Description { get; set; }
+
     [Column("emoji")]
     [StringLength(10)]
     public string? Emoji { get; set; }
+
     [Column("created_at", TypeName = "timestamp without time zone")]
     public DateTime CreatedAt { get; set; }
+
     [Column("created_by")]
     public int? CreatedBy { get; set; }
+
 
     [ForeignKey(nameof(CreatedBy))]
     [InverseProperty(nameof(User.Recommendations))]

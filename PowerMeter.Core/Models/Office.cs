@@ -18,17 +18,22 @@ public partial class Office
     [Key]
     [Column("office_id")]
     public int Id { get; set; }
+
     [Column("room_number")]
     [StringLength(15)]
     public string RoomNumber { get; set; } = null!;
+
     [Column("office_name")]
     [StringLength(50)]
     public string OfficeName { get; set; } = null!;
 
+
     [InverseProperty(nameof(EnergyConsumption.Office))]
     public virtual ICollection<EnergyConsumption> EnergyConsumptions { get; set; }
+
     [InverseProperty(nameof(Payment.Office))]
     public virtual ICollection<Payment> Payments { get; set; }
+
     [InverseProperty(nameof(User.Office))]
     public virtual ICollection<User> Users { get; set; }
 }

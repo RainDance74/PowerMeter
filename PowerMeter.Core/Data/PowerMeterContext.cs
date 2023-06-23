@@ -39,7 +39,7 @@ public partial class PowerMeterContext : DbContext
 
         modelBuilder.Entity<EnergyConsumption>(entity =>
         {
-            entity.HasKey(e => e.ConsumptionId)
+            entity.HasKey(e => e.Id)
                 .HasName("energy_consumptions_pkey");
 
             entity.HasOne(d => d.Office)
