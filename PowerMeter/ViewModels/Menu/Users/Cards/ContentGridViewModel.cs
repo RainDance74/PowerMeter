@@ -43,7 +43,7 @@ public partial class ContentGridViewModel : ObservableRecipient
         if (clickedItem != null)
         {
             _navigationService.SetListDataItemForNextConnectedAnimation(clickedItem);
-            _navigationService.NavigateTo(typeof(ContentGridDetailViewModel).FullName!, clickedItem.UserId);
+            _navigationService.NavigateTo(typeof(ContentGridDetailViewModel).FullName!, clickedItem.Id);
         }
     }
 }

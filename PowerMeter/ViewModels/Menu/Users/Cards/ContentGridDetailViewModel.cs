@@ -18,7 +18,7 @@ public partial class ContentGridDetailViewModel : ObservableRecipient, INavigati
             // Don't make the program wait until the DBContext will be generated with await
             var db = await Task.Run(() => new Core.Data.PowerMeterContext());
             Item = await db.Users.Include(u => u.Department)
-                                 .FirstOrDefaultAsync(i => i.UserId == Id);
+                                 .FirstOrDefaultAsync(i => i.Id == Id);
         }
     }
 
