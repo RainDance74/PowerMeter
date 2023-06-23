@@ -9,7 +9,7 @@ public partial class Recommendation
 #nullable enable
     [Key]
     [Column("recommendation_id")]
-    public int RecommendationId { get; set; }
+    public int Id { get; set; }
     [Column("title")]
     [StringLength(100)]
     public string Title { get; set; } = null!;

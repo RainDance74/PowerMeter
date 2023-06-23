@@ -11,7 +11,7 @@ public partial class Payment
 #nullable enable
     [Key]
     [Column("payment_id")]
-    public int PaymentId { get; set; }
+    public int Id { get; set; }
     [Column("office_id")]
     public int OfficeId { get; set; }
     [Column("start_time", TypeName = "timestamp without time zone")]

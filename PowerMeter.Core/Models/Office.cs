@@ -17,7 +17,7 @@ public partial class Office
 
     [Key]
     [Column("office_id")]
-    public int OfficeId { get; set; }
+    public int Id { get; set; }
     [Column("room_number")]
     [StringLength(15)]
     public string RoomNumber { get; set; } = null!;

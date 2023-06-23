@@ -16,7 +16,7 @@ public partial class User
 
     [Key]
     [Column("user_id")]
-    public int UserId { get; set; }
+    public int Id { get; set; }
     [Column("email")]
     [StringLength(100)]
     public string Email { get; set; } = null!;

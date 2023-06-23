@@ -9,7 +9,7 @@ public partial class EnergyConsumption
 {
     [Key]
     [Column("consumption_id")]
-    public int ConsumptionId { get; set; }
+    public int Id { get; set; }
     [Column("office_id")]
     public int OfficeId { get; set; }
     [Column("timestamp", TypeName = "timestamp without time zone")]
