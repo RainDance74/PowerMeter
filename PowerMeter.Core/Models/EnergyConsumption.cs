@@ -10,12 +10,16 @@ public partial class EnergyConsumption
     [Key]
     [Column("consumption_id")]
     public int Id { get; set; }
+
     [Column("office_id")]
     public int OfficeId { get; set; }
+
     [Column("timestamp", TypeName = "timestamp without time zone")]
     public DateTime Timestamp { get; set; }
+
     [Column("consumption_value")]
     public float ConsumptionValue { get; set; }
+
 
     [ForeignKey(nameof(OfficeId))]
     [InverseProperty("EnergyConsumptions")]
