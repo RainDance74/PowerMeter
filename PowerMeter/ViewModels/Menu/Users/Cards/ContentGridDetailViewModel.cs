@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-
+using Microsoft.EntityFrameworkCore;
 using PowerMeter.Contracts.ViewModels;
 using PowerMeter.Core.Contracts.Services;
 using PowerMeter.Core.Models;
@@ -8,22 +8,17 @@ namespace PowerMeter.ViewModels.Menu.Users.Cards;
 
 public partial class ContentGridDetailViewModel : ObservableRecipient, INavigationAware
 {
-    private readonly ISampleDataService _sampleDataService;
-
     [ObservableProperty]
-    private SampleOrder? item;
-
-    public ContentGridDetailViewModel(ISampleDataService sampleDataService)
-    {
-        _sampleDataService = sampleDataService;
-    }
+    private User? item;
 
     public async void OnNavigatedTo(object parameter)
     {
-        if (parameter is long orderID)
+        if (parameter is int Id)
         {
-            var data = await _sampleDataService.GetContentGridDataAsync();
-            Item = data.First(i => i.OrderID == orderID);
+            // Don't make the program wait until the DBContext will be generated with await
+            var db = await Task.Run(() => new Core.Data.PowerMeterContext());
+            Item = await db.Users.Include(u => u.Department)
+                                 .FirstOrDefaultAsync(i => i.Id == Id);
         }
     }
 
