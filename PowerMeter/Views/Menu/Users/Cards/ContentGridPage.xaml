@@ -14,6 +14,7 @@
         <controls:AdaptiveGridView
             animations:Connected.ListItemElementName="itemThumbnail"
             animations:Connected.ListItemKey="animationKeyContentGrid"
+            Padding="0,5,0,0"
             DesiredWidth="180"
             ItemHeight="160"
             IsItemClickEnabled="True"
@@ -25,6 +26,7 @@
                 <DataTemplate x:DataType="models:User">
                     <Grid
                         x:Name="itemThumbnail"
+                        Background="{StaticResource CardBackgroundFillColorDefault}"
                         Padding="{StaticResource XSmallLeftTopRightBottomMargin}">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Border CornerRadius="12" Height="60" Width="60">
@@ -34,7 +36,12 @@
                                 Margin="{StaticResource XXSmallTopMargin}"
                                 HorizontalAlignment="Center"
                                 Style="{ThemeResource BodyTextStyle}"
-                                Text="{x:Bind FirstName}" />
+                                Text="{x:Bind ShortName}" />
+                            <TextBlock Margin="{StaticResource XXSmallTopMargin}"
+                               HorizontalAlignment="Center"
+                               Style="{ThemeResource BodyTextStyle}">
+                                <Run Text="{x:Bind Role, Mode=OneWay}"/>
+                            </TextBlock>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

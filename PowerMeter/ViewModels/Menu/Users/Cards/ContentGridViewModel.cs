@@ -1,14 +1,10 @@
 ﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.EntityFrameworkCore;
 using PowerMeter.Contracts.Services;
-using PowerMeter.Contracts.ViewModels;
-using PowerMeter.Core.Contracts.Services;
 using PowerMeter.Core.Models;
-using PowerMeter.Core.Services;
 
 namespace PowerMeter.ViewModels.Menu.Users.Cards;
 
@@ -32,7 +28,10 @@ public partial class ContentGridViewModel : ObservableRecipient
         // Don't make the program wait until the DBContext will be generated with await
         var db = await Task.Run(() => new Core.Data.PowerMeterContext());
         // TODO: Add roles checking
-        var data = await db.Users.Where(u => u.Status != Core.Enums.UserStatus.Suspended).ToListAsync();
+        var data = await db.Users.Include(u => u.Department)
+                                 .Include(u => u.Office)
+                                 .Where(u => u.Status != Core.Enums.UserStatus.Suspended)
+                                 .ToListAsync();
         // Add every user in the same time 👇
         await Task.WhenAll(data.Select(item => { Source.Add(item); return Task.CompletedTask; }));
     }
@@ -43,7 +42,7 @@ public partial class ContentGridViewModel : ObservableRecipient
         if (clickedItem != null)
         {
             _navigationService.SetListDataItemForNextConnectedAnimation(clickedItem);
-            _navigationService.NavigateTo(typeof(ContentGridDetailViewModel).FullName!, clickedItem.Id);
+            _navigationService.NavigateTo(typeof(ContentGridDetailViewModel).FullName!, clickedItem);
         }
     }
 }

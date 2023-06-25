@@ -43,7 +43,7 @@
                         VerticalAlignment="Top"
                         RelativePanel.AlignTopWithPanel="True"
                         RelativePanel.AlignLeftWithPanel="True">
-                        <Image Source="{x:Bind ViewModel.Item.ImageUrl, Mode=OneWay}"/>
+                        <Image Source="{x:Bind ViewModel.Item.ImageUrl}"/>
                     </Grid>
 
                     <TextBlock
@@ -52,29 +52,29 @@
                         RelativePanel.AlignTopWithPanel="True"
                         RelativePanel.RightOf="itemHero"
                         Style="{ThemeResource TitleTextBlockStyle}"
-                        Text="{x:Bind ViewModel.Item.FirstName, Mode=OneWay}" />
+                        Text="{x:Bind ViewModel.Item.FullName}" />
 
                     <StackPanel x:Name="propertiesGroup1" RelativePanel.Below="itemHero">
-                        <StackPanel x:Name="statusGroup" Margin="{StaticResource SmallTopMargin}">
-                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Status" />
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Role, Mode=OneWay}" />
+                        <StackPanel x:Name="officeGroup" Margin="{StaticResource SmallTopMargin}">
+                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Office" />
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Office.NameAndRoom}"/>
                         </StackPanel>
 
-                        <StackPanel x:Name="orderDateGroup" Margin="{StaticResource SmallTopMargin}">
-                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Order date" />
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Department.DepartmentName, Mode=OneWay}" />
+                        <StackPanel x:Name="roleGroup" Margin="{StaticResource SmallTopMargin}">
+                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Role" />
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Role}" />
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel x:Name="propertiesGroup2" RelativePanel.Below="propertiesGroup1">
-                        <StackPanel x:Name="shipToGroup" Margin="{StaticResource SmallTopMargin}">
-                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Ship to" />
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Email, Mode=OneWay}" />
+                        <StackPanel x:Name="departmentGroup" Margin="{StaticResource SmallTopMargin}">
+                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Department" />
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Department.DepartmentName}" />
                         </StackPanel>
 
-                        <StackPanel x:Name="orderTotalGroup" Margin="{StaticResource SmallTopMargin}">
-                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Order total" />
-                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Email, Mode=OneWay}" />
+                        <StackPanel x:Name="emailGroup" Margin="{StaticResource SmallTopMargin}">
+                            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" Text="Email" />
+                            <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.Item.Email}" />
                         </StackPanel>
                     </StackPanel>
 
@@ -83,19 +83,10 @@
                 <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Style="{ThemeResource SubtitleTextBlockStyle}"
-                    Text="Note 1" />
+                    Text="Note" />
                 <TextBlock
                     Style="{ThemeResource BodyTextBlockStyle}"
-                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis hendrerit nulla, vel molestie libero. In nec ultricies magna, ultricies molestie ipsum. Mauris non dignissim velit. Etiam malesuada blandit mauris eu maximus. Quisque ornare, felis nec scelerisque mollis, risus dolor posuere magna, in gravida quam mi id nisi. Nullam mattis consequat ex. Cras nulla neque, dictum ac urna et, vestibulum feugiat ex. Pellentesque malesuada accumsan ligula, vel fringilla lacus facilisis sit amet. Proin convallis tempor arcu, ac placerat libero pretium ut. Praesent hendrerit nisl at lobortis viverra. Fusce vitae velit odio. Nam ut tortor sed purus finibus sollicitudin quis at ante. Ut sodales dolor vel eros mollis suscipit. Donec eu nulla id urna ultricies consequat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;" />
-
-                <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{ThemeResource SubtitleTextBlockStyle}"
-                    Text="Note 2" />
-                <TextBlock
-                    Margin="{StaticResource MediumBottomMargin}"
-                    Style="{ThemeResource BodyTextBlockStyle}"
-                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis hendrerit nulla, vel molestie libero. In nec ultricies magna, ultricies molestie ipsum. Mauris non dignissim velit. Etiam malesuada blandit mauris eu maximus. Quisque ornare, felis nec scelerisque mollis, risus dolor posuere magna, in gravida quam mi id nisi. Nullam mattis consequat ex. Cras nulla neque, dictum ac urna et, vestibulum feugiat ex. Pellentesque malesuada accumsan ligula, vel fringilla lacus facilisis sit amet. Proin convallis tempor arcu, ac placerat libero pretium ut. Praesent hendrerit nisl at lobortis viverra. Fusce vitae velit odio. Nam ut tortor sed purus finibus sollicitudin quis at ante. Ut sodales dolor vel eros mollis suscipit. Donec eu nulla id urna ultricies consequat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;" />
+                    Text="{x:Bind ViewModel.Item.Note}" />
             </StackPanel>
         </ScrollViewer>
     </Grid>
