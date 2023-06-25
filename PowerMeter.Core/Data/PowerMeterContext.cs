@@ -78,8 +78,8 @@ public partial class PowerMeterContext : DbContext
             entity.Property(e => e.Role)
                 .HasConversion(EnumHelper.CreateEnumToStringConverter<UserRole>());
 
-            entity.Property(e => e.Role)
-                .HasConversion(EnumHelper.CreateEnumToStringConverter<UserRole>());
+            entity.Property(e => e.Status)
+                .HasConversion(EnumHelper.CreateEnumToStringConverter<UserStatus>());
 
             entity.HasOne(d => d.Department)
                 .WithMany(p => p.Users)

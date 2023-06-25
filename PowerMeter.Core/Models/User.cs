@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using PowerMeter.Core.Enums;
+using PowerMeter.Core.Helpers;
 
 namespace PowerMeter.Core.Models;
 
