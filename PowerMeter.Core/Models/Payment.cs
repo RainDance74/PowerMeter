@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PowerMeter.Core.Enums;
 
 namespace PowerMeter.Core.Models;
 
@@ -21,6 +23,10 @@ public partial class Payment
 
     [Column("end_time", TypeName = "timestamp without time zone")]
     public DateTime? EndTime { get; set; }
+
+    [Column("status")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public PaymentStatus Status { get; set; }
 
     [Column("note")]
     public string? Note { get; set; }
