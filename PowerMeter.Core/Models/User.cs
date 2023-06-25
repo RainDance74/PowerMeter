@@ -37,6 +37,12 @@ public partial class User
     [StringLength(50)]
     public string? Patronymic { get; set; }
 
+    [NotMapped]
+    public string ShortName => $"{LastName} {FirstName[0]}. {(Patronymic?.Length > 0 ? Patronymic[0].ToString() + "." : "")}".Trim();
+
+    [NotMapped]
+    public string FullName => $"{LastName} {FirstName} {Patronymic ?? ""}".Trim();
+
     [Column("department_id")]
     public int DepartmentId { get; set; }
 
@@ -53,7 +59,7 @@ public partial class User
     public UserRole Role { get; set; }
 
     [Column("office_id")]
-    public int? OfficeId { get; set; }
+    public int? OfficeId { get; set; } = 1;
 
     [Column("note")]
     public string? Note { get; set; }

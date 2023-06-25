@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace PowerMeter.Core.Models;
 
@@ -14,18 +15,21 @@ public partial class Office
         Payments = new HashSet<Payment>();
         Users = new HashSet<User>();
     }
-
+#nullable enable
     [Key]
     [Column("office_id")]
     public int Id { get; set; }
 
     [Column("room_number")]
-    [StringLength(15)]
-    public string RoomNumber { get; set; } = null!;
+    [StringLength(5)]
+    public string? RoomNumber { get; set; }
 
     [Column("office_name")]
     [StringLength(50)]
-    public string OfficeName { get; set; } = null!;
+    public string? Name { get; set; }
+
+    [NotMapped]
+    public string NameAndRoom => (string.IsNullOrEmpty(Name) ? "Undefined" : Name) + (string.IsNullOrEmpty(RoomNumber) ? "" : $" (#{RoomNumber})");
 
 
     [InverseProperty(nameof(EnergyConsumption.Office))]
