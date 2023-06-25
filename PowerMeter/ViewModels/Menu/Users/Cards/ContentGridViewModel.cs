@@ -32,7 +32,7 @@ public partial class ContentGridViewModel : ObservableRecipient
         // Don't make the program wait until the DBContext will be generated with await
         var db = await Task.Run(() => new Core.Data.PowerMeterContext());
         // TODO: Add roles checking
-        var data = await db.Users.ToListAsync();
+        var data = await db.Users.Where(u => u.Status != Core.Enums.UserStatus.Suspended).ToListAsync();
         // Add every user in the same time 👇
         await Task.WhenAll(data.Select(item => { Source.Add(item); return Task.CompletedTask; }));
     }

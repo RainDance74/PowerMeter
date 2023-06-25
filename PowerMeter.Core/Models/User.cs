@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using PowerMeter.Core.Enums;
 
 namespace PowerMeter.Core.Models;
 
@@ -37,9 +39,17 @@ public partial class User
     [Column("department_id")]
     public int DepartmentId { get; set; }
 
+    [Column("status")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public UserStatus Status { get; set; }
+
     [Column("image_url")]
     [StringLength(255)]
     public string? ImageUrl { get; set; }
+
+    [Column("role")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public UserRole Role { get; set; }
 
     [Column("office_id")]
     public int? OfficeId { get; set; }

@@ -1,5 +1,7 @@
 ﻿using System.Configuration;
 using Microsoft.EntityFrameworkCore;
+using PowerMeter.Core.Enums;
+using PowerMeter.Core.Helpers;
 using PowerMeter.Core.Models;
 
 namespace PowerMeter.Core.Data;
@@ -33,9 +35,9 @@ public partial class PowerMeterContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasPostgresEnum("payment_status", new[] { "In Progress", "Confirmation", "Canceled", "Finished" })
-            .HasPostgresEnum("user_role", new[] { "Super Admin", "Admin", "Accountant", "User" })
-            .HasPostgresEnum("user_status", new[] { "Active", "Inactive", "Suspended" });
+        modelBuilder.HasPostgresEnum("payment_status",  Enum.GetValues<PaymentStatus>() .Select(x => x.ToFriendlyString()).ToArray())
+                    .HasPostgresEnum("user_role",       Enum.GetValues<UserRole>()      .Select(x => x.ToFriendlyString()).ToArray())
+                    .HasPostgresEnum("user_status",     Enum.GetValues<UserStatus>()    .Select(x => x.ToFriendlyString()).ToArray());
 
         modelBuilder.Entity<EnergyConsumption>(entity =>
         {
@@ -51,6 +53,9 @@ public partial class PowerMeterContext : DbContext
 
         modelBuilder.Entity<Payment>(entity =>
         {
+            entity.Property(e => e.Status)
+                .HasConversion(EnumHelper.CreateEnumToStringConverter<PaymentStatus>());
+
             entity.Property(e => e.Amount).HasPrecision(10, 2);
 
             entity.HasOne(d => d.Office)
@@ -70,6 +75,12 @@ public partial class PowerMeterContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
+            entity.Property(e => e.Role)
+                .HasConversion(EnumHelper.CreateEnumToStringConverter<UserRole>());
+
+            entity.Property(e => e.Role)
+                .HasConversion(EnumHelper.CreateEnumToStringConverter<UserRole>());
+
             entity.HasOne(d => d.Department)
                 .WithMany(p => p.Users)
                 .HasForeignKey(d => d.DepartmentId)
