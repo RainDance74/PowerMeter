@@ -1,7 +1,9 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.WinUI.UI.Controls;
 using Microsoft.EntityFrameworkCore;
 using PowerMeter.Contracts.ViewModels;
 using PowerMeter.Core.Contracts.Services;
@@ -29,7 +31,5 @@ public partial class DataGridViewModel : ObservableRecipient
         await Task.WhenAll(data.Select(item => { Source.Add(item); return Task.CompletedTask; }));
     }
 
-    public void OnNavigatedFrom()
-    {
-    }
+    public void OnNavigatedFrom() { }
 }
