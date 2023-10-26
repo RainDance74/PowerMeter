@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI"
     xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:enums="using:PowerMeter.Core.Enums"
     mc:Ignorable="d"
     Loaded="{x:Bind ViewModel.PageLoadedCommand}">
 
@@ -25,8 +27,8 @@
                 <controls:DataGridTextColumn Binding="{Binding Patronymic}" Header="Patronymic" Tag="Patronymic"/>
                 <controls:DataGridTextColumn Binding="{Binding Email}" Header="Email" Tag="Email"/>
                 <controls:DataGridTextColumn Binding="{Binding Department.DepartmentName}" Header="Department" Tag="Department.DepartmentName"/>
-                <controls:DataGridComboBoxColumn Binding="{Binding Role}" Header="Role" Tag="Role"/>
-                <controls:DataGridTextColumn Binding="{Binding Status}" Header="Status" Tag="Status"/>
+                <controls:DataGridComboBoxColumn Binding="{Binding Role}" ItemsSource="{ui:EnumValues Type=enums:UserRole}" Header="Role" Tag="Role"/>
+                <controls:DataGridComboBoxColumn Binding="{Binding Status}" ItemsSource="{ui:EnumValues Type=enums:UserStatus}" Header="Status" Tag="Status"/>
                 <controls:DataGridTextColumn Binding="{Binding Office.NameAndRoom}" Header="Office" Tag="Office.NameAndRoom"/>
             </controls:DataGrid.Columns>
         </controls:DataGrid>
