@@ -1,15 +1,16 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel;
 
 namespace PowerMeter.Core.Enums;
 
+// TODO: Multiple languages support
 public enum UserRole
 {
-    [EnumMember(Value = "Super Admin")]
+    [Description("Super Admin")]
     SAdmin,
-    [EnumMember(Value = "Admin")]
+    [Description("Admin")]
     Admin,
-    [EnumMember(Value = "Accountant")]
+    [Description("Accountant")]
     Accountant,
-    [EnumMember(Value = "User")]
+    [Description("User")]
     User
 }

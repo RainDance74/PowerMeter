@@ -1,15 +1,16 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel;
 
 namespace PowerMeter.Core.Enums;
 
+// TODO: Multiple languages support
 public enum PaymentStatus
 {
-    [EnumMember(Value = "In Progress")]
+    [Description("In Progress")]
     InProgress,
-    [EnumMember(Value = "Confirmation")]
+    [Description("Confirmation")]
     Confirmation,
-    [EnumMember(Value = "Canceled")]
+    [Description("Canceled")]
     Canceled,
-    [EnumMember(Value = "Finished")]
+    [Description("Finished")]
     Done
 }
