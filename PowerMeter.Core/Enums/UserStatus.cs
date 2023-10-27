@@ -1,13 +1,14 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel;
 
 namespace PowerMeter.Core.Enums;
 
+// TODO: Multiple languages support
 public enum UserStatus
 {
-    [EnumMember(Value = "Active")]
+    [Description("Active")]
     Active,
-    [EnumMember(Value = "Inactive")]
+    [Description("Inactive")]
     Inactive,
-    [EnumMember(Value = "Suspended")]
+    [Description("Suspended")]
     Suspended
 }
