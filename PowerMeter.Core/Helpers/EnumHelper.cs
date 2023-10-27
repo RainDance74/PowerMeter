@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using System.Runtime.Serialization;
+﻿using System.ComponentModel;
+using System.Reflection;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace PowerMeter.Core.Helpers;
@@ -9,41 +9,27 @@ public static class EnumHelper
     where TEnum : Enum
     {
         return new ValueConverter<TEnum, string>(
-            v => v.ToFriendlyString(),
-            v => v.FromFriendlyString<TEnum>());
+            v => v.ToDescriptionString(),
+            v => v.FromDescriptionString<TEnum>());
     }
 
-    public static string ToFriendlyString<T>(this T @enum)
+    public static string ToDescriptionString<T>(this T @enum)
         where T : Enum
     {
-        // Get the type
-        var type = @enum.GetType();
-        // Get the member info
-        var memberInfo = type.GetMember(@enum.ToString());
-        // If there is no member info, return the string value
+        var enumType = @enum.GetType();
+        var memberInfo = enumType.GetMember(@enum.ToString());
         if (memberInfo.Length <= 0) return @enum.ToString();
-        // Get the attribute
-        var attribute = memberInfo[0].GetCustomAttribute<EnumMemberAttribute>(false);
-
-        // Return the friendly value
-        return attribute?.Value ?? @enum.ToString();
+        var descriptionAttribute = (DescriptionAttribute)memberInfo[0].GetCustomAttribute(typeof(DescriptionAttribute), false);
+        return descriptionAttribute == null ? @enum.ToString() : descriptionAttribute.Description;
     }
 
-    public static T FromFriendlyString<T>(this string @string)
+    public static T FromDescriptionString<T>(this string @string)
         where T : Enum
     {
-        // Get the type
-        var type = typeof(T);
-        // Get the member info
-        var memberInfo = type.GetMembers()
-            .FirstOrDefault(x => x.GetCustomAttribute<EnumMemberAttribute>()?.Value == @string);
-        // If there is no member info, return the string value
-        if (memberInfo == null)
-        {
-            return (T)Enum.Parse(type, @string);
-        }
-
-        // Return the friendly value
-        return (T)Enum.Parse(type, memberInfo.Name);
+        var enumType = typeof(T);
+        var memberInfo = enumType.GetMembers();
+        var matchingMemberInfo = memberInfo
+            .FirstOrDefault(x => x.GetCustomAttribute<DescriptionAttribute>()?.Description == @string);
+        return matchingMemberInfo == null ? default : (T)Enum.Parse(enumType, matchingMemberInfo.Name);
     }
 }

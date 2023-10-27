@@ -35,9 +35,9 @@ public partial class PowerMeterContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasPostgresEnum("payment_status",  Enum.GetValues<PaymentStatus>() .Select(x => x.ToFriendlyString()).ToArray())
-                    .HasPostgresEnum("user_role",       Enum.GetValues<UserRole>()      .Select(x => x.ToFriendlyString()).ToArray())
-                    .HasPostgresEnum("user_status",     Enum.GetValues<UserStatus>()    .Select(x => x.ToFriendlyString()).ToArray());
+        modelBuilder.HasPostgresEnum("payment_status",  Enum.GetValues<PaymentStatus>() .Select(x => x.ToDescriptionString()).ToArray())
+                    .HasPostgresEnum("user_role",       Enum.GetValues<UserRole>()      .Select(x => x.ToDescriptionString()).ToArray())
+                    .HasPostgresEnum("user_status",     Enum.GetValues<UserStatus>()    .Select(x => x.ToDescriptionString()).ToArray());
 
         modelBuilder.Entity<EnergyConsumption>(entity =>
         {
